@@ -1,13 +1,15 @@
-/* global game, Hooks */
-export class CoC7SystemHelper {
-  ready () {
-    window.addEventListener('mousemove', this.setTooltipPosition)
-
-    Hooks.on('renderCoC7CharacterSheetV2', (actor, html, data) => this.renderCoC7CharacterSheetV2(actor, html, data))
-    Hooks.on('renderCoC7NPCSheet', (actor, html, data) => this.renderCoC7NPCAndCreatureSheet(actor, html, data))
-    Hooks.on('renderCoC7CreatureSheet', (actor, html, data) => this.renderCoC7NPCAndCreatureSheet(actor, html, data))
+/* global Application, game, Hooks */
+class ManualPage extends Application {
+  static get defaultOptions () {
+    const options = super.defaultOptions
+    options.title = game.i18n.localize('TITLES.ManualPage')
+    options.template = game.i18n.localize('TEMPLATES.ManualPage')
+    options.width = 700
+    return options
   }
+}
 
+class CoC7SystemHelper {
   init () {
     game.settings.register('CoC7-helper', 'tt-delay', {
       name: 'SETTINGS.TTDelay',
@@ -16,6 +18,23 @@ export class CoC7SystemHelper {
       type: Number,
       default: 1000
     })
+    game.settings.register('CoC7-helper', 'tt-generic', {
+      name: 'SETTINGS.TTGeneric',
+      scope: 'world',
+      config: true,
+      type: Boolean,
+      default: true
+    })
+
+    Hooks.on('renderSettings', (settings, html, data) => this.renderSettings(settings, html, data))
+  }
+
+  ready () {
+    window.addEventListener('mousemove', this.setTooltipPosition)
+
+    Hooks.on('renderCoC7CharacterSheetV2', (actor, html, data) => this.renderCoC7CharacterSheetV2(actor, html, data))
+    Hooks.on('renderCoC7NPCSheet', (actor, html, data) => this.renderCoC7NPCAndCreatureSheet(actor, html, data))
+    Hooks.on('renderCoC7CreatureSheet', (actor, html, data) => this.renderCoC7NPCAndCreatureSheet(actor, html, data))
   }
 
   setTooltipPosition (e) {
@@ -27,13 +46,24 @@ export class CoC7SystemHelper {
     tooltip.css('left', (e.clientX - tooltip.width() / 2) + 'px')
   }
 
+  renderSettings (settings, html, data) {
+    html.find('#settings-documentation').append('<button class="generic-help"><i class="fab fa-readme"></i> ' + game.i18n.localize('TITLES.CoC7') + '</button>')
+    html.find('.generic-help').click(this.clickHelp.bind(this))
+  }
+
+  clickHelp (event) {
+    new ManualPage().render(true)
+  }
+
   renderCoC7CharacterSheetV2 (actor, html, data) {
+    html.append('<a class="generic-help"><i class="fas fa-question"></i></a>')
     html.find('.skill-name.rollable').mouseenter(this.prepareSkillName.bind(this)).mouseleave(this.removeTooltip.bind(this))
     html.find('.characteristic-label').mouseenter(this.prepareSkillName.bind(this)).mouseleave(this.removeTooltip.bind(this))
     html.find('.auto-toggle').mouseenter(this.prepareAutoToggle.bind(this)).mouseleave(this.removeTooltip.bind(this))
     html.find('.attribute-label.rollable').mouseenter(this.prepareAttributeLabel.bind(this)).mouseleave(this.removeTooltip.bind(this))
     html.find('.weapon-name.rollable').mouseenter(this.prepareWeaponName.bind(this)).mouseleave(this.removeTooltip.bind(this))
     html.find('.weapon-damage').mouseenter(this.prepareWeaponDamage.bind(this)).mouseleave(this.removeTooltip.bind(this))
+    html.find('.generic-help').mouseenter(this.prepareCharacterGenericHelp.bind(this)).mouseleave(this.removeTooltip.bind(this))
   }
 
   renderCoC7NPCAndCreatureSheet (actor, html, data) {
@@ -126,6 +156,14 @@ export class CoC7SystemHelper {
     this.addTooltip(
       '<p><strong>Left click</strong> Skill check with options</p>' +
       '<p><strong>Shift + Left click</strong> Immediate regular difficult skill check roll</p>'
+    )
+  }
+
+  prepareCharacterGenericHelp (event) {
+    this.addTooltip(
+      '<h2>Check Help and Documention</h2>' +
+      '<p>Under Game Settings, Help and Documention, check CoC Documention</p>' +
+      '<ul><li>Change Font</li><li>Create Occupations</li><li>Create Skills</li></ul>'
     )
   }
 

@@ -11,3 +11,10 @@
   border: 1px solid var(--main-sheet-front-color);
   color: var(--main-sheet-front-color);
 }
+
+a.generic-help {
+  position: absolute;
+  right: 20px;
+  top: 40px;
+  color: var(--main-sheet-front-color);
+}

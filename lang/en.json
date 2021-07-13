@@ -1,5 +1,13 @@
 {
     "SETTINGS": {
-        "TTDelay": "Millisecond delay before tooltip should show, 0 for never"
+        "TTDelay": "Millisecond delay before tooltip should show, 0 for never",
+        "TTGeneric": "Show prompts to check Help and Documentation"
+    },
+    "TEMPLATES": {
+        "ManualPage": "modules/CoC7-helper/pages/en.html"
+    },
+    "TITLES": {
+        "CoC7": "Call of Cthulhu 7h Edition (Unofficial)",
+        "ManualPage": "Documentation"
     }
 }
