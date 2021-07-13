@@ -1,0 +1,13 @@
+.coc7-helper-tooltip {
+  position: fixed;
+  overflow: hidden;
+  display: none;
+  z-index: 1001;
+  padding: 6px;
+  text-align: left;
+  pointer-events: none;
+  vertical-align: middle;
+  background: url(/ui/parchment.jpg) repeat;
+  border: 1px solid var(--main-sheet-front-color);
+  color: var(--main-sheet-front-color);
+}

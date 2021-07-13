@@ -1,0 +1,5 @@
+{
+    "SETTINGS": {
+        "TTDelay": "Millisecond delay before tooltip should show, 0 for never"
+    }
+}
