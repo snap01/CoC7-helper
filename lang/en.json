@@ -4,7 +4,7 @@
         "TTGeneric": "Show prompts to check Help and Documentation"
     },
     "TEMPLATES": {
-        "ManualPage": "modules/CoC7-helper/pages/en.html"
+        "ManualPage": "modules/CoC7-helper/pages/en/index.html"
     },
     "TITLES": {
         "CoC7": "Call of Cthulhu 7h Edition (Unofficial)",

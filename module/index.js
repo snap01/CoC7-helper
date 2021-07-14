@@ -1,12 +1,29 @@
-/* global Application, game, Hooks */
+/* global Application, game, getTemplate, Hooks */
 class ManualPage extends Application {
   static get defaultOptions () {
     const options = super.defaultOptions
+    const h = window.innerHeight * 0.9
+    const w = Math.min(window.innerWidth * 0.9, 1200)
+    options.height = h
+    options.width = w
+    options.top = (window.innerHeight - h) / 2
+    options.left = (window.innerWidth - w) / 2
     options.title = game.i18n.localize('TITLES.ManualPage')
     options.template = game.i18n.localize('TEMPLATES.ManualPage')
-    options.width = 700
     return options
   }
+
+  activateListeners (html) {
+    $('#CoC7ManualPage').on('click', 'a', async function () {
+      const button = $(this)
+      const template = await getTemplate(button.data('template'))
+      $('#CoC7ManualPage').html(template)
+    })
+  }
+
+  // render (force = false, options = {}) {
+  //   super.render(force, options)
+  // }
 }
 
 class CoC7SystemHelper {
