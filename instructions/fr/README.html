@@ -1,0 +1,346 @@
+<h2 id="documentation-du-système-squid">Documentation du Système :squid:</h2>
+<p>Des éons qu&#39;<em>ils</em> dorment mais <a href="https://github.com/HavlockV">Vétérini</a> les a réveillés ! Avec ce système ultime, à vous l&#39;Appel de Cthulhu v7 en version totale: création, progression, SAN, combat, poursuites, ... 
+Le MUST have !</p>
+<table>
+<thead>
+<tr>
+<th><a href="#guide-de-lutilisateur-trice">Guide de l&#39;utilisateur/trice</a> (en cours)</th>
+<th><del><a href="#sant%C3%A9-mentale">Santé Mentale</a></del> (à faire)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong><a href="#tableau-des-commandes">Tableau des Commandes</a> (en cours)</strong></td>
+<td><strong><del><a href="#combat">Combat</a></del> (à faire)</strong></td>
+</tr>
+<tr>
+<td><strong><a href="#liens-et-jets">Liens (pour les jets)</a> (en cours)</strong></td>
+<td><strong><del><a href="#poursuites">Poursuites</a></del> (à faire)</strong></td>
+</tr>
+<tr>
+<td><strong><a href="#cr%C3%A9ation-de-personnage">Création de personnage</a> (à faire)</strong></td>
+<td><strong><del><a href="#objets">Objets</a></del> (à faire)</strong></td>
+</tr>
+<tr>
+<td><strong><del><a href="#phase-de-progression">Phase de progression</a></del> (à faire)</strong></td>
+<td><strong><del><a href="#personnages">Personnages</a></del> (à faire)</strong></td>
+</tr>
+</tbody></table>
+<p><em>Documentation partagée avec amour et horreur par Toc :squid: <a href="https://tentacules.net/?motscles=JdrVirtuel">https://tentacules.net</a></em></p>
+<p><img src="https://tentacules.net/toc/toc_/virtuel/foundryvtt-cocv7vetrini-docgithub-003.jpg" alt="03"></p>
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>\</p>
+<h1 id="guide-de-lutilisateur-trice">Guide de l&#39;Utilisateur-trice</h1>
+<p>Vous avez installé Foundry VTT (la version stable, les versions en test sont... en test :)</p>
+<p><strong>Quelques modules pour commencer</strong></p>
+<ul>
+<li>fr-FR - Core Game: pour avoir la traduction française de Foundry</li>
+<li>Dice so nice!: pour les jets de dés</li>
+</ul>
+<p>Vous passez la langue par défaut à Français dans l&#39;onglet <code>configuration</code> du menu d&#39;<code>accueil</code>.<br>Vous créez votre monde, avec le Call of Cthulhu 7th edition (Unofficial) de Vétérini.<br>Et vous le lancez.<br>Vous activez vos modules et hop !</p>
+<h2 id="premiers-paramétrages">Premiers paramétrages</h2>
+<p>Une fois dans le monde, dans le menu <code>Paramètres</code>, vous sélectionnez <code>Gestion des modules</code>, puis <code>Système de jeu</code>.<br>Tous les paramètres sont dignes d&#39;intérêt mais:</p>
+<ul>
+<li>les <code>Modificateur de jet</code> et <code>Modificateur de seuil de réussite</code> le sont particulièrement.</li>
+<li>et <code>Changer l&#39;apparence de la fiche</code></li>
+</ul>
+<h2 id="ce-que-lon-peut-créer">Ce que l&#39;on peut créer</h2>
+<h3 id="icône-personnages">Icône Personnages</h3>
+<ul>
+<li>character: personnage PJ</li>
+<li>npc: PNJ</li>
+<li>creature: monstre</li>
+<li>vehicle: véhicule</li>
+</ul>
+<h3 id="icône-objets">Icône Objets</h3>
+<p>Là ça devient ouf:</p>
+<ul>
+<li>item: un objet</li>
+<li>weapon: une arme</li>
+<li>skill: une compétence</li>
+<li>setup: une module de création de perso à glisser/déposer sur votre fiche à la création (embarque les jets de création de caracs, les compétences,...)</li>
+<li>occupation: une occupation (avec ses compétences, son époque, ses points d&#39;occupation, son crédit)</li>
+<li>archetype: un archétype (Pulp)</li>
+<li>book: un livre occulte</li>
+<li>spell: un sort</li>
+<li>talent: un talent (Pulp)</li>
+<li>status: un état... de folie</li>
+</ul>
+<h3 id="icône-tables">Icône Tables</h3>
+<p>:recycle:</p>
+<h2 id="outils-du-gardien-menus-spécifiques-au-système">Outils du gardien (menus spécifiques au système)</h2>
+<p>Ils sont dans votre barre d&#39;outils:</p>
+<p><img src="https://tentacules.net/toc/toc_/virtuel/foundryvtt-cocv7vetrini-docgithub-001.jpg" alt="01"></p>
+<ul>
+<li>L&#39;icône de dé permet de lancer des dés n&#39;importe quand (en les modifiant si besoin: difficulté, seuil, niveau de compétence).</li>
+<li>L&#39;icône de poulpe donne accès aux outils du Gardien:</li>
+</ul>
+<p><img src="https://tentacules.net/toc/toc_/virtuel/foundryvtt-cocv7vetrini-docgithub-002.jpg" alt="02"></p>
+<p>De haut en bas:</p>
+<ul>
+<li>Activer la phase de développement (entre séances)</li>
+<li>Activer la phase de création (à la création des persos)</li>
+<li>Importer un personnage depuis un simple texte</li>
+<li>Activer la possibilité des gains d&#39;expérience (en partie)</li>
+<li>Balancer un jet factice aux joueurs dans le chat: un peu d&#39;pression :)</li>
+</ul>
+<h2 id="les-compendiums">Les compendiums</h2>
+<p>Pour les utiliser au mieux, 2 choses:</p>
+<ul>
+<li>Installer le module Compendium Folders (qui trie automatiquement les compendium)</li>
+<li>Importer les différents compendium (clic-droit Importer...)</li>
+</ul>
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>\</p>
+<h1 id="tableau-des-commandes">Tableau des Commandes</h1>
+<p>Quasiment tout est cliquable: les caractéristiques, les compétences, les armes, les dégâts, la SAN, la Chance...
+Et en plus:</p>
+<ul>
+<li>combiné avec la touche <code>Shift</code> enfoncée, ça envoie directement le jet dans le <strong>chat</strong>.</li>
+<li>combiné avec la touche <code>Ctrl</code> [pour le Gardien] enfoncée, ça envoie une demande dans le <strong>chat</strong> au personnage concerné pour réaliser le jet, après paramétrage du jet par le gardien. </li>
+<li>les 2 combinés, <code>Ctrl+Shift</code>: ça envoie une demande dans le <strong>chat</strong> au personnage concerné pour réaliser le jet directement.</li>
+<li>et le <code>clic-droit</code> vous emmène vers les jets <strong>opposés</strong> ou <strong>combinés</strong>.</li>
+</ul>
+<h2 id="commun">Commun</h2>
+<p>Sur XXX, XXX pouvant être carac, compétence,...</p>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Gardien</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>clic</code> XXX</td>
+<td>Lance un jet de XXX après paramétrage du jet</td>
+</tr>
+<tr>
+<td><code>Shift</code> + <code>clic</code> XXX</td>
+<td>Lance un jet de XXX (difficulté ordinaire pas de bonus/malus)</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>clic</code> XXX</td>
+<td>Demande un jet de XXX après paramétrage du jet (dont seuil et difficulté)</td>
+</tr>
+<tr>
+<td><code>Ctrl+Shift</code> + <code>clic</code> XXX</td>
+<td>Demande un jet de XXX</td>
+</tr>
+<tr>
+<td><strong>Investigateur</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>clic</code> XXX</td>
+<td>Lance un jet de XXX après paramétrage du jet</td>
+</tr>
+<tr>
+<td><code>Ctrl+Shift</code> ou <code>Shift</code> + <code>clic</code> XXX</td>
+<td>Lance un jet de XXX (difficulté ordinaire pas de bonus/malus)</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>clic</code> XXX</td>
+<td>Lance un jet de XXX après paramétrage du jet</td>
+</tr>
+</tbody></table>
+<h2 id="santé-mentale">Santé Mentale</h2>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Gardien</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>clic</code> XXX</td>
+<td>Lance un jet de XXX après paramétrage du jet</td>
+</tr>
+<tr>
+<td><code>Shift</code> + <code>clic</code> XXX</td>
+<td>Lance un jet de XXX (difficulté ordinaire pas de bonus/malus)</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>clic</code> XXX</td>
+<td>Demande un jet de XXX après paramétrage du jet (dont seuil et difficulté)</td>
+</tr>
+<tr>
+<td><code>Ctrl+Shift</code> + <code>clic</code> XXX</td>
+<td>Demande un jet de XXX</td>
+</tr>
+<tr>
+<td><code>Ctr+Shift+Alt</code> + <code>clic</code> SAN</td>
+<td>Demande un jet de SAN en définissant les pertes de SAN</td>
+</tr>
+<tr>
+<td><strong>Investigateur</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>clic</code> XXX</td>
+<td>Lance un jet de XXX après paramétrage du jet</td>
+</tr>
+<tr>
+<td><code>Ctrl+Shift</code> ou <code>Shift</code> + <code>clic</code> XXX</td>
+<td>Lance un jet de XXX (difficulté ordinaire pas de bonus/malus)</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>clic</code> XXX</td>
+<td>Lance un jet de XXX après paramétrage du jet (dont seuil et difficulté)</td>
+</tr>
+</tbody></table>
+<h2 id="jets-combinés--opposés">Jets Combinés / Opposés</h2>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>clic-droit</code> XXX</td>
+<td>Débute/ Ajoute le jet à un jet *<em>opposé</em> après paramétrage du jet</td>
+</tr>
+<tr>
+<td><code>Ctrl+Shift</code> ou <code>Shift</code> + <code>clic-droit</code> XXX</td>
+<td>Débute/ Ajoute le jet à un jet <strong>opposé</strong> (difficulté ordinaire pas de bonus/malus)</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>clic-droit</code> XXX</td>
+<td>Débute/ Ajoute le jet à un jet <strong>opposé</strong> après paramétrage du jet (dont seuil et difficulté)</td>
+</tr>
+<tr>
+<td><code>Alt</code> + <code>clic-droit</code> XXX</td>
+<td>Débute/ Ajoute le jet à un jet <strong>combiné</strong> après paramétrage du jet</td>
+</tr>
+<tr>
+<td><code>Ctrl+Shift+Alt</code> ou <code>Shift+Alt</code> + <code>clic-droit</code> XXX</td>
+<td>Débute/ Ajoute le jet à un jet <strong>combiné</strong> (difficulté ordinaire pas de bonus/malus)</td>
+</tr>
+<tr>
+<td><code>Ctrl+Alt</code> + <code>clic-droit</code> XXX</td>
+<td>Débute/ Ajoute le jet à un jet <strong>combiné</strong> après paramétrage du jet (dont seuil et difficulté)</td>
+</tr>
+</tbody></table>
+<h2 id="commandes-dans-le-chat">Commandes dans le Chat</h2>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/cc xx</td>
+<td>lance un D100 contre une difficulté de xx</td>
+</tr>
+<tr>
+<td>/cbr xx, yy</td>
+<td>lance un D100 contre une difficulté de xx et de yy</td>
+</tr>
+</tbody></table>
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>\</p>
+<h1 id="liens-et-jets">Liens et Jets</h1>
+<p>Toutes ces commandes peuvent être glissées/déposées dans un Article (ou toute zone éditable) en mode modification <em>sauf les modificateurs de seuil</em> !<br>Ce qui peut donner: <code>@coc7.check[type:attribute,name:san,difficulty:1,modifier:-2]</code></p>
+<p><img src="https://tentacules.net/toc/toc_/virtuel/foundryvtt-cocv7vetrini-docgithub-004.jpg" alt="04"></p>
+<p>Voici le fonctionnement: <code>@coc7.TYPE_OF_REQUEST[OPTIONS]{TEXT_TO_DISPLAY}</code></p>
+<ul>
+<li>TYPE_OF_REQUEST :<ul>
+<li>&#39;sanloss&#39;: test de SAN, si échoué, propose de réduire la SAN.</li>
+<li>&#39;check&#39;: test défini en fonction des options.</li>
+<li>&#39;item&#39;: test d&#39;objet. Seulement pour les objets de type arme.</li>
+</ul>
+</li>
+<li>OPTIONS: [] = optionnel<ul>
+<li>sanloss:<ul>
+<li>sanMax: perte de SAN max</li>
+<li>sanMin: perte de SAN min</li>
+</ul>
+</li>
+<li>check:<ul>
+<li>type: type de jet (caractéristique, compétence, attribut).</li>
+<li>name: nom de caractéristique, compétence, attribut.</li>
+<li>[blind]: jet aveugle, sinon le jet sera du type sélectionné dans le chat.</li>
+</ul>
+</li>
+<li>Tous:<ul>
+<li>[difficulty]: ? (aveugle), 0 (normal), + (difficile), ++ (extrême), +++ (critique).</li>
+<li>[modifier]: -x (x dé malus), +x (x dé bonus), 0 (pas de modificateur).</li>
+<li>[icon]: icône à utiliser (font awesome, fas fa-dice).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TEXT_TO_DISPLAY: Texte à afficher, optionnel.</li>
+</ul>
+<p>Par exemple:</p>
+<ul>
+<li><code>@coc7.sanloss[sanMax:1D6,sanMin:1,difficulty:++,modifier:-1]{Hard San Loss (-1) 1/1D6}</code></li>
+<li><code>@coc7.check[type:charac,name:STR,difficulty:+,modifier:-1]{Hard STR check(-1)}</code></li>
+<li><code>@coc7.check[type:attrib,name:lck,difficulty:+,modifier:-1]{Hard luck check(-1)}</code></li>
+<li><code>@coc7.check[type:skill,icon:fas fa-arrow-alt-circle-right,name:anthropology,difficulty:+,modifier:-1]{Hard Anthropology check(-1)}</code></li>
+<li><code>@coc7.check[type:skill,icon:fas fa-arrow-alt-circle-right,name:anthropology,modifier:+1]</code></li>
+</ul>
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>\</p>
+<h1 id="création-de-personnage">Création de personnage</h1>
+<h2 id="a-la-main">A la main</h2>
+<ol>
+<li>Vous créez un nouveau Personnage.</li>
+<li>Vous passez en mode Création.</li>
+<li>Vous déverrouillez la fiche de personnage (clic sur le petit cadenas).</li>
+<li>Vous le nommez et remplissez occupation, sexe, âge,...</li>
+<li>Vous ajoutez les compétences une par une, et oui, à la mimine, et positionnez les % qui vont bien.</li>
+</ol>
+<p>Pour plus de facilité, vous pouvez vous créer un Compendium listant toutes les compétences et ainsi vous n&#39;aurez plus à les saisir à chaque fois mais simplement à les glisser/déposer sur votre fiche, en mode Modification.</p>
+<h2 id="via-une-occupation">Via une occupation</h2>
+<p>:recycle:</p>
+<h2 id="via-un-setup">Via un setup</h2>
+<p>:recycle:</p>
+<h2 id="via-import--copie">Via import / copie</h2>
+<p><strong>Copie</strong></p>
+<ol>
+<li>Vous vous créez/avez créé un personnage type, avec compétences.</li>
+<li>Vous le copiez (clic droit sur le personnage dans la liste des Personnages, copier).</li>
+<li>Et voilà !</li>
+</ol>
+<p><strong>Import</strong></p>
+<ol>
+<li>Vous vous créez/avez créé un personnage type, avec compétences.</li>
+<li>Vous l&#39;exportez (clic droit sur le personnage dans la liste des Personnages, exporter (le fichier arrive sur votre ordinateur, format json)).</li>
+<li>Vous vous rendez dans votre partie, vous créez juste le nouveau personnage sans rien y mettre (juste le nom).</li>
+<li>Vous importez le fichier précédemment exporté (clic droit sur le personnage dans la liste des Personnages, importer).</li>
+<li>Et voilà !</li>
+</ol>
+<p>Vous pouvez ensuite le modifier à façon en passant en mode Création.</p>
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>\</p>
+<h1 id="phase-de-progression">Phase de progression</h1>
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>\</p>
+<h1 id="santé-mentale-1">Santé Mentale</h1>
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>\</p>
+<h1 id="combat">Combat</h1>
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>\</p>
+<h1 id="poursuites">Poursuites</h1>
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>\</p>
+<h1 id="objets">Objets</h1>
+<h2 id="item-un-objet">item: un objet</h2>
+<h2 id="weapon-une-arme">weapon: une arme</h2>
+<h2 id="skill-une-compétence">skill: une compétence</h2>
+<h2 id="setup-une-module-de-création-de-perso">setup: une module de création de perso</h2>
+<h2 id="occupation-une-occupation">occupation: une occupation</h2>
+<h2 id="archetype-un-archétype-pulp">archetype: un archétype (Pulp)</h2>
+<h2 id="book-un-livre-occulte">book: un livre occulte</h2>
+<h2 id="spell-un-sort">spell: un sort</h2>
+<h2 id="talent-un-talent-pulp">talent: un talent (Pulp)</h2>
+<h2 id="status-un-état-de-folie">status: un état... de folie</h2>
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>\</p>
+<h1 id="personnages">Personnages</h1>
+<h2 id="character-personnage-pj">character: personnage PJ</h2>
+<p>C&#39;est ici: <a data-template="modules/CoC7-helper/instructions/fr/pages/character_creation.html">Création de personnage</a>.</p>
+<h2 id="npc-pnj">npc: PNJ</h2>
+<h2 id="creature-monstre">creature: monstre</h2>
+<h2 id="vehicle-véhicule">vehicle: véhicule</h2>
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>\</p>

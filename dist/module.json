@@ -2,7 +2,7 @@
     "name": "CoC7-helper",
     "title": "Call of Cthulhu system helper",
     "description": "<p>Documentation and ToolTips for HavlockV FoundryVTT implementation of Call of Cthulhu</p>",
-    "version": "0.3",
+    "version": "0.4",
     "author": "snap01",
     "esmodules": [
         "module/index.js"

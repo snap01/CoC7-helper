@@ -1,5 +1,14 @@
 /* global Application, game, getTemplate, Hooks */
 class ManualPage extends Application {
+  constructor (options = {}) {
+    super(options)
+    if (typeof options.defaultPage !== 'undefined') {
+      this.defaultPage = options.defaultPage
+    } else {
+      this.defaultPage = game.i18n.localize('TEMPLATES.ManualPage')
+    }
+  }
+
   static get defaultOptions () {
     const options = super.defaultOptions
     const h = window.innerHeight * 0.9
@@ -9,21 +18,20 @@ class ManualPage extends Application {
     options.top = (window.innerHeight - h) / 2
     options.left = (window.innerWidth - w) / 2
     options.title = game.i18n.localize('TITLES.ManualPage')
-    options.template = game.i18n.localize('TEMPLATES.ManualPage')
+    options.id = 'CoC7ManualContainer'
+    options.template = 'modules/CoC7-helper/templates/instructions.html'
     return options
   }
 
-  activateListeners (html) {
+  async activateListeners (html) {
     $('#CoC7ManualPage').on('click', 'a', async function () {
       const button = $(this)
       const template = await getTemplate(button.data('template'))
       $('#CoC7ManualPage').html(template)
     })
+    const template = await getTemplate(this.defaultPage)
+    $('#CoC7ManualPage').html(template)
   }
-
-  // render (force = false, options = {}) {
-  //   super.render(force, options)
-  // }
 }
 
 class CoC7SystemHelper {

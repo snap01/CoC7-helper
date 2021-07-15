@@ -1,0 +1,94 @@
+<h2 id="links">Links</h2>
+<ul>
+<li>Links are a way for a GM to request for a roll (Characteristic, Attribute, Skill, SAN loss, Weapon).</li>
+<li>Links are created in the chat log. When you click a link it will trigger a check for your(s) controlled/impersonated character(s).</li>
+<li>Links can be included in any editor, mainly journal entries.</li>
+<li>Link can be created in 5 ways:<ul>
+<li>By manually typing it (read details below).</li>
+<li>By CTRL+click on any sheet element (Characteristic, Attribute, skill, SAN loss).</li>
+<li>By dragging a sheet element (Characteristic, Attribute, skill (+CTRL)) on an editor (Journal entry)</li>
+<li>By CTRL + dragging an item (skill or weapon) from a compendium or an item directory on an editor. When a link is created that way and the used as a GM, if your controlled character doen&#39;t hold the weapon/skill you&#39;ll be prompted to create the corresponding item.</li>
+<li>By using the included compendium written by Lozalojo.</li>
+</ul>
+</li>
+<li>Links can be dragged from chat log on an editor.</li>
+<li>When a link is created the difficulty/penalty selection windows will open. Hold SHIFT to bypass that comportment.</li>
+<li>When a link is created, the roll mode will be check. If the roll mode is set to &#39;blind GM roll&#39; the link will be created as blind.</li>
+<li>When a link is created with a difficulty and a penalty, the difficulty/penalty windows will not pop.</li>
+<li>When a link is created without a difficulty or a penalty, the difficulty/penalty windows will pop. Holding SHIFT will fastforward the roll (regular/no penalty).</li>
+</ul>
+<h2 id="writing-links">Writing links</h2>
+<p>Links for chat messages and sheet editors (NPC, Journal entries...).
+Format of link is <code>@coc7.TYPE_OF_REQUEST[OPTIONS]{TEXT_TO_DISPLAY}</code></p>
+<ul>
+<li><code>TYPE_OF_REQUEST</code> :<ul>
+<li><code>sanloss</code>: trigger a san check, upon failure will propose to deduct the corresponding SAN.</li>
+<li><code>check</code>: trigger a check depending on the options.</li>
+<li><code>item</code>: trigger use of a weapon. Only items of type weapon can be triggered.</li>
+</ul>
+</li>
+<li><code>OPTIONS: []</code> = optional, default<ul>
+<li><code>sanloss</code>:<ul>
+<li><code>sanMax</code>: max SAN loss</li>
+<li><code>sanMin</code>: min SAN loss</li>
+</ul>
+</li>
+<li><code>check</code>:<ul>
+<li><code>type</code>: type of check ( <code>characteristic</code>, <code>skill</code>, <code>attrib</code>).</li>
+<li><code>name</code>: name of the skill/characteristic/attrib.</li>
+<li>[<code>blind</code>]: will force a blind check, if not present the check will depend on your selected roll mode.</li>
+</ul>
+</li>
+<li>all:<ul>
+<li>[<code>difficulty</code>]: <code>?</code> (blind), <code>0</code> (regular), <code>+</code> (hard), <code>++</code> (extreme), <code>+++</code> (critical).</li>
+<li>[<code>modifier</code>]: <code>-x</code> (x penalty dice), <code>+x</code> (x bonus dice), <code>0</code> (no modifier).</li>
+<li>[<code>icon</code>]: icon tu use (<a href="https://fontawesome.com/icons">font awesome</a>, <code>fas fa-dice</code>).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>TEXT_TO_DISPLAY</code>: Name to display, this is optional.</li>
+</ul>
+<h3 id="examples">Examples</h3>
+<table>
+<thead>
+<tr>
+<th>Link</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>@coc7.sanloss[sanMax:1D6,sanMin:1,difficulty:++,modifier:-1]</code></td>
+<td>{Hard San Loss (-1) 1/1D6}</td>
+</tr>
+<tr>
+<td><code>@coc7.check[type:charac,name:STR,difficulty:+,modifier:-1]</code></td>
+<td>{Hard STR check(-1)}</td>
+</tr>
+<tr>
+<td><code>@coc7.check[type:attrib,name:lck,difficulty:+,modifier:-1]</code></td>
+<td>{Hard luck check(-1)}</td>
+</tr>
+<tr>
+<td><code>@coc7.check[type:skill,icon:fas fa-arrow-alt-circle-right,name:anthropology,difficulty:+,modifier:-1]</code></td>
+<td>{Hard Anthropology check(-1)} (with icon)</td>
+</tr>
+<tr>
+<td><code>@coc7.sanloss[sanMax:1D6,sanMin:1]</code></td>
+<td>{San Loss (-1) 1/1D6} (without name, difficulty nor modifier)</td>
+</tr>
+<tr>
+<td><code>@coc7.check[type:skill,icon:fas fa-arrow-alt-circle-right,name:anthropology,modifier:+1]</code></td>
+<td>{Anthropology check (+1)} (with icon, without name nor difficulty)</td>
+</tr>
+</tbody></table>
+<h3 id="using-links">Using links</h3>
+<ul>
+<li>You can drag/drop links from chat to sheets and between sheets.</li>
+<li>You can drag/drop items and skills on a journal entry while holding CTRL, this will create the corresponding check with regular difficulty and 0 modifier.</li>
+<li>You can create link in the chat by clicking and holding CTRL from any sheet (PC/NPC/Creature) corresponding characteristic/luck/SAN/Competence/weapon/San loss.<ul>
+<li>This will open the select penalty/difficulty dialogue. Clicking on the generated link will then trigger the check with all parameters.</li>
+<li>Holding Shift on top will not open the penalty/difficulty dialogue. Clicking on the generated link will open the penalty/difficulty dialogue then trigger the check.</li>
+</ul>
+</li>
+</ul>
