@@ -80,6 +80,12 @@ class CoC7SystemHelper {
     new ManualPage().render(true)
   }
 
+  clickCharacterSheetV2Help (event) {
+    new ManualPage({
+      defaultPage: 'modules/CoC7-helper/instructions/en/character_creation.html'
+    }).render(true)
+  }
+
   renderCoC7CharacterSheetV2 (actor, html, data) {
     html.append('<a class="generic-help"><i class="fas fa-question"></i></a>')
     html.find('.skill-name.rollable').mouseenter(this.prepareSkillName.bind(this)).mouseleave(this.removeTooltip.bind(this))
@@ -88,7 +94,7 @@ class CoC7SystemHelper {
     html.find('.attribute-label.rollable').mouseenter(this.prepareAttributeLabel.bind(this)).mouseleave(this.removeTooltip.bind(this))
     html.find('.weapon-name.rollable').mouseenter(this.prepareWeaponName.bind(this)).mouseleave(this.removeTooltip.bind(this))
     html.find('.weapon-damage').mouseenter(this.prepareWeaponDamage.bind(this)).mouseleave(this.removeTooltip.bind(this))
-    html.find('.generic-help').mouseenter(this.prepareCharacterGenericHelp.bind(this)).mouseleave(this.removeTooltip.bind(this))
+    html.find('.generic-help').mouseenter(this.prepareCharacterGenericHelp.bind(this)).mouseleave(this.removeTooltip.bind(this)).click(this.clickCharacterSheetV2Help.bind(this))
   }
 
   renderCoC7NPCAndCreatureSheet (actor, html, data) {
@@ -186,8 +192,7 @@ class CoC7SystemHelper {
 
   prepareCharacterGenericHelp (event) {
     this.addTooltip(
-      '<h2>Check Help and Documention</h2>' +
-      '<p>Under Game Settings, Help and Documention, check CoC Documention</p>' +
+      '<p>Check the documentation to find out how to do the following.</p>' +
       '<ul><li>Change Font</li><li>Create Occupations</li><li>Create Skills</li></ul>'
     )
   }
