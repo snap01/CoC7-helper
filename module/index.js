@@ -88,19 +88,12 @@ class CoC7SystemHelper {
 
   renderCoC7CharacterSheetV2 (actor, html, data) {
     html.append('<a class="generic-help"><i class="fas fa-question"></i></a>')
-    html.find('.skill-name.rollable').mouseenter(this.prepareSkillName.bind(this)).mouseleave(this.removeTooltip.bind(this))
-    html.find('.characteristic-label').mouseenter(this.prepareSkillName.bind(this)).mouseleave(this.removeTooltip.bind(this))
-    html.find('.auto-toggle').mouseenter(this.prepareAutoToggle.bind(this)).mouseleave(this.removeTooltip.bind(this))
-    html.find('.attribute-label.rollable').mouseenter(this.prepareAttributeLabel.bind(this)).mouseleave(this.removeTooltip.bind(this))
     html.find('.weapon-name.rollable').mouseenter(this.prepareWeaponName.bind(this)).mouseleave(this.removeTooltip.bind(this))
     html.find('.weapon-damage').mouseenter(this.prepareWeaponDamage.bind(this)).mouseleave(this.removeTooltip.bind(this))
     html.find('.generic-help').mouseenter(this.prepareCharacterGenericHelp.bind(this)).mouseleave(this.removeTooltip.bind(this)).click(this.clickCharacterSheetV2Help.bind(this))
   }
 
   renderCoC7NPCAndCreatureSheet (actor, html, data) {
-    html.find('.skill-name.rollable').mouseenter(this.prepareSkillName.bind(this)).mouseleave(this.removeTooltip.bind(this))
-    html.find('.characteristic-label').mouseenter(this.prepareSkillName.bind(this)).mouseleave(this.removeTooltip.bind(this))
-    html.find('.attribute-label.rollable').mouseenter(this.prepareAttributeLabel.bind(this)).mouseleave(this.removeTooltip.bind(this))
     html.find('.weapon-name.rollable').mouseenter(this.prepareWeaponName.bind(this)).mouseleave(this.removeTooltip.bind(this))
     html.find('.weapon-damage').mouseenter(this.prepareWeaponDamage.bind(this)).mouseleave(this.removeTooltip.bind(this))
     html.find('.weapon-skill.rollable').mouseenter(this.prepareWeaponSkill.bind(this)).mouseleave(this.removeTooltip.bind(this))
@@ -115,52 +108,9 @@ class CoC7SystemHelper {
       '<p><strong>Right click</strong> Opposed skill check with options</p>' +
       '<p><strong>Shift + Right click</strong> Immediate opposed skill check</p>' +
       '<h2>Combined skill checks</h2>' +
-      '<p><strong>Alt + Right click</strong> Opposed skill check with options</p>' +
+      '<p><strong>Alt/Option + Right click</strong> Opposed skill check with options</p>' +
       (game.user.isGM ? '<h2>Keeper checks</h2><p><strong>CTRL + Left click</strong> Create skill roll link</p>' : '')
     )
-  }
-
-  prepareAutoToggle (event) {
-    this.addTooltip(
-      '<p><strong>Left click</strong> Toggle automatic calculation / manual entry</p>'
-    )
-  }
-
-  prepareAttributeLabel (event) {
-    const attrib = event.currentTarget.parentElement.dataset.attrib
-    switch (attrib) {
-      case 'db':
-        this.addTooltip(
-          '<p><strong>Left click</strong> Roll bonus damage</p>'
-        )
-        break
-      case 'lck':
-        this.addTooltip(
-          '<h2>Luck checks</h2>' +
-          '<p><strong>Left click</strong> Luck check with options</p>' +
-          '<p><strong>Shift + Left click</strong> Immediate regular difficult luck check roll</p>' +
-          '<h2>Opposed luck checks</h2>' +
-          '<p><strong>Right click</strong> Opposed luck check with options</p>' +
-          '<p><strong>Shift + Right click</strong> Immediate opposed luck check</p>' +
-          '<h2>Combined luck checks</h2>' +
-          '<p><strong>Alt + Right click</strong> Opposed luck check with options</p>' +
-          (game.user.isGM ? '<h2>Keeper checks</h2><p><strong>CTRL + Left click</strong> Create luck roll link</p>' : '')
-        )
-        break
-      case 'san':
-        this.addTooltip(
-          '<h2>Sanity checks</h2>' +
-          '<p><strong>Left click</strong> Sanity check with options</p>' +
-          '<p><strong>Shift + Left click</strong> Immediate regular difficult sanity check roll</p>' +
-          '<h2>Opposed sanity checks</h2>' +
-          '<p><strong>Right click</strong> Opposed sanity check with options</p>' +
-          '<p><strong>Shift + Right click</strong> Immediate opposed sanity check</p>' +
-          '<h2>Combined sanity checks</h2>' +
-          '<p><strong>Alt + Right click</strong> Opposed sanity check with options</p>' +
-          (game.user.isGM ? '<h2>Keeper checks</h2><p><strong>CTRL + Left click</strong> Create sanity roll link</p><p><strong>CTRL + ALT + Left click</strong> Create sanity check link</p>' : '')
-        )
-        break
-    }
   }
 
   prepareWeaponName (event) {
@@ -171,7 +121,7 @@ class CoC7SystemHelper {
       '<p><strong>Right click</strong> Opposed combat check with options</p>' +
       '<p><strong>Shift + Right click</strong> Immediate opposed combat check</p>' +
       '<h2>Combined combat checks</h2>' +
-      '<p><strong>Alt + Right click</strong> Opposed combat check with options</p>' +
+      '<p><strong>Alt/Option + Right click</strong> Opposed combat check with options</p>' +
       (game.user.isGM ? '<h2>Keeper checks</h2><p><strong>CTRL + Left click</strong> Create combat roll link</p>' : '')
     )
   }
